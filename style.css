@@ -1,0 +1,147 @@
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--Light-Gray);
+  font-family: "Big Shoulders Display", cursive;
+  font-family: "Karla", sans-serif;
+  display: grid;
+  height: 95vh;
+  place-items: center;
+}
+
+.container {
+  width: 85%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "top"
+    "center"
+    "bottom";
+}
+
+/* Top */
+.container .top {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 5px 5px 0 0;
+  grid-area: top;
+}
+
+.container .top h3 {
+  color: var(--Cyan);
+}
+
+.container .top h4 {
+  color: var(--Bright-Yellow);
+}
+
+.container .top p {
+  color: var(--Grayish-Blue);
+  font-size: 14px;
+  line-height: 25px;
+}
+
+/* Center */
+.container .center {
+  background-color: var(--Cyan);
+  padding: 10px 20px;
+  grid-area: center;
+}
+
+.container .center h4 {
+  color: white;
+}
+
+.container .center .dollar {
+  color: var(--Light-Gray);
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+}
+
+.container .center .dollar::after {
+  content: "per month";
+  font-size: 16px;
+  color: hsl(178.94deg 63.84% 65.29%);
+  position: absolute;
+  top: 8px;
+  left: 70px;
+  font-weight: 100;
+}
+
+.container .center p:last-of-type {
+  color: var(--Light-Gray);
+  margin-top: 10px;
+}
+
+.container .center button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: var(--Bright-Yellow);
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+  box-shadow: 3px 8px 5px rgb(0, 0, 0, 0.1);
+}
+
+/* Bottom */
+.container .bottom {
+  background-color: hsl(179.48deg 47.15% 51.76%);
+  padding: 10px 20px;
+  border-radius: 0 0 5px 5px;
+  grid-area: bottom;
+}
+
+.container .bottom h4 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.container .bottom pre {
+  color: var(--Light-Gray);
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 0;
+  font-family: "Big Shoulders Display", cursive;
+  font-family: "Karla", sans-serif;
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "top top"
+      "center bottom";
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    width: 700px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 25px;
+  }
+}
